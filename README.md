@@ -15,7 +15,7 @@ Tecnologias utilizadas
 
   --HTML
   --CSS
-  --BOOSTRAP 3
+  --BOOTSTRAP
   --ANGULARJS 
   --JQUERY
 
