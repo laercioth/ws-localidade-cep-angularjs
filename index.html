@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+	<head>
+		<title>WS-CEP-AngularJS</title>
+		<!-- METADATA-->
+		<meta charset="utf-8">
+  		<meta name="viewport" content="width=device-width, initial-scale=1">
+  		
+  		<!-- CSS-->
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/style.css">
+
+		<!-- SCRIPT-->
+		<script src="js/jquery.min.js"></script> 
+		<script src="js/angular.min.js"></script>
+		<script src="js/angular-input-masks-standalone.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="app.js"></script>
+	</head>
+
+	<body ng-app="cepApp">
+		<div class="container" ng-controller="cepsCtrl">
+			<h2 >WebService - CEP - AngularJS</h2><br/><br/>
+			
+			<form class="form-horizontal" role="form">
+				
+				<!--CEP-->
+				<div class="form-group">
+					<label class="control-label col-sm-4" for="cep">CEP:</label>
+					<div class="col-sm-2">          
+						<input type="text" class="form-control" ng-model="data.cep" id="cep" ui-br-cep-mask>
+			      	</div>
+			      	<!--BUTTON-->
+			      	<div class="col-sm-2">          
+						<button type="submit" class="btn btn-primary" ng-disabled="loading" ng-click="search(data.cep)">Search</button>
+				  		<button type="submit" class="btn btn-danger" ng-click="clear()">Clear</button>
+			      	</div>
+			    </div>
+
+			    <!--BAIRRO-->
+			    <div class="form-group">
+					<label class="control-label col-sm-4" for="bairro">Bairro:</label>
+					<div class="col-sm-4">          
+						<input type="text" class="form-control" disabled="true" ng-model="data.bairro" id="bairro">
+			      	</div>
+			    </div>
+
+			    <!--CIDADE-->
+			    <div class="form-group">
+					<label class="control-label col-sm-4" for="cidade">Cidade:</label>
+					<div class="col-sm-4">          
+						 <input type="text" class="form-control" disabled="true" ng-model="data.cidade" id="cidade">
+			      	</div>
+			    </div>
+
+			    <!--ESTADO-->
+			    <div class="form-group">
+					<label class="control-label col-sm-4" for="cidade">Estado:</label>
+					<div class="col-sm-4">          
+						 <input type="text" class="form-control" disabled="true" ng-model="data.estado" id="estado">
+			      	</div>
+			    </div>
+
+			    <!--AREA-->
+			    <div class="form-group">
+					<label class="control-label col-sm-4" for="area_km2">Área da cidade em Km²:</label>
+					<div class="col-sm-4">          
+						 <input type="text" class="form-control" disabled="true" ng-model="data.cidade_info.area_km2" id="area_km2">
+			      	</div>
+			    </div>
+
+			    <!-- GIF -->
+				<div class="img center" ng-show="loading">
+					<img src="img/loading_spinner.gif">
+				</div>
+
+			    <!--MSGS-->
+			    <div class="col-sm-12">
+		      		<h4 class="text-center" ng-show="status !== 200">Localidade não encontrada!</h4>
+		      	</div>
+		      	<div class="col-sm-12">
+		      		<h4 class="text-center" ng-show="cepInvalido">Favor preencher o campo CEP!</h4>
+		      	</div>
+			</form>
+		</div>
+	</body>
+</html>
