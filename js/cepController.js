@@ -1,8 +1,6 @@
-/*Modulo com injecao de dependencia para a mascara do cep*/
-var app = angular.module('cepApp', ['ui.utils.masks']);
 
-/*Controller*/
-app.controller('cepsCtrl', function($scope, $http) {
+/*Controller CEP*/
+app.controller('CepCtrl', function($scope, $http) {
 
 	/*URI WS*/
 	var URI_WS = "http://api.postmon.com.br/v1/cep/";
@@ -42,6 +40,6 @@ app.controller('cepsCtrl', function($scope, $http) {
 		$scope.data = {};
 	}
 	
-	/*inicia a variaveis e seus valores*/
+	/*Inicia a variaveis e seus valores*/
 	$scope.init();
 });

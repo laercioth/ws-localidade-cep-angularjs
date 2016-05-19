@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="cepApp">
 	<head>
 		<title>WS-CEP-AngularJS</title>
 		<!-- METADATA-->
@@ -11,19 +11,20 @@
 		<link rel="stylesheet" href="css/style.css">
 
 		<!-- SCRIPT-->
-		<script src="js/jquery.min.js"></script> 
-		<script src="js/angular.min.js"></script>
-		<script src="js/angular-input-masks-standalone.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="app.js"></script>
-	</head>
+		<script type="text/javascript" src="js/jquery.min.js"></script> 
+		<script type="text/javascript" src="js/angular.min.js"></script>
+		<script type="text/javascript" src="js/angular-input-masks-standalone.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
 
-	<body ng-app="cepApp">
-		<div class="container" ng-controller="cepsCtrl">
+		<!--AngularJS Module and Controller -->
+		<script type="text/javascript" src="js/app.js"></script>
+		<script type="text/javascript" src="js/cepController.js"></script>
+	</head>
+	<body ng-controller="CepCtrl">
+		<div class="container">
 			<h2 >WebService - CEP - AngularJS e Bootstrap</h2><br/><br/>
 			
 			<form class="form-horizontal" role="form">
-				
 				<!--CEP-->
 				<div class="form-group">
 					<label class="control-label col-sm-4" for="cep">CEP:</label>
@@ -87,7 +88,7 @@
 		      		<h4 class="text-center" ng-show="status !== 200">Localidade não encontrada!</h4>
 		      	</div>
 		      	<div class="col-sm-12">
-		      		<h4 class="text-center" ng-show="cepInvalido">Favor preencher o campo CEP!</h4>
+		      		<h4 class="text-center" ng-show="cepInvalido">Favor preencher o campo CEP corretamente!</h4>
 		      	</div>
 			</form>
 		</div>
