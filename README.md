@@ -4,7 +4,7 @@
 	</head>
 	<body>
 		<div>
-			<strong><span style="font-size:16px;"># ws-localidade-cep-angularjs</span></strong></div>
+			<strong><span style="font-size:30px;"># ws-localidade-cep-angularjs</span></strong></div>
 		<div>
 			&nbsp;</div>
 		<div>
