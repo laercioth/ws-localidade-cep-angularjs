@@ -14,7 +14,7 @@ app.controller('CepCtrl', function($scope, $http) {
 
 	/*Faz a busca e retorna os valores, caso contrario, limpa os campos*/
 	$scope.search = function (cep){
-		if(cep !== '' && cep !== undefined && cep !== null){
+		if(!cep){
 			$scope.loading = true;
 			$http.get(URI_WS + cep).then(function(response) {
 				$scope.data   = response.data;
